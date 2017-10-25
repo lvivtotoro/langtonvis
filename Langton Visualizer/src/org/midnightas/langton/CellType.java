@@ -11,13 +11,24 @@ import javafx.scene.shape.Rectangle;
 
 public class CellType {
 
-	public static final Color[] COLORS = new Color[256];
+	public static final Color[] COLORS = new Color[16];
 	static {
-		// 8-bit colors, rrrgggbb
-		COLORS[0] = new Color(1, 1, 1, 1);
-		COLORS[1] = new Color(0, 1, 1, 1);
-		COLORS[2] = new Color(0, 0, 1, 1);
-		COLORS[3] = new Color(0, 1, 0, 1);
+		COLORS[0] = Color.rgb(64, 0, 0);
+		COLORS[1] = Color.rgb(0, 64, 0);
+		COLORS[2] = Color.rgb(0, 0, 64);
+		COLORS[3] = Color.rgb(64, 64, 0);
+		COLORS[4] = Color.rgb(0, 64, 64);
+		COLORS[5] = Color.rgb(64, 0, 64);
+		COLORS[6] = Color.rgb(255, 0, 0);
+		COLORS[7] = Color.rgb(0, 255, 0);
+		COLORS[8] = Color.rgb(0, 0, 255);
+		COLORS[9] = Color.rgb(255, 255, 0);
+		COLORS[10] = Color.rgb(0, 255, 255);
+		COLORS[11] = Color.rgb(255, 0, 255);
+		COLORS[12] = Color.rgb(64, 255, 128);
+		COLORS[13] = Color.rgb(255, 64, 128);
+		COLORS[14] = Color.rgb(128, 64, 255);
+		COLORS[15] = Color.rgb(64, 64, 64);
 	}
 
 	public int id, becomes;
@@ -76,7 +87,7 @@ public class CellType {
 				graphic.getChildren().add(turnTo);
 				graphic.getChildren().add(direction);
 				setGraphic(graphic);
-
+				
 				// set cell bg
 				Color color = COLORS[type.id];
 				setStyle("-fx-background-color: " + String.format("rgb(%s,%s,%s)", (int) (color.getRed() * 255),
